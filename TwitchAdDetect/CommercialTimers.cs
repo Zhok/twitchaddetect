@@ -66,7 +66,7 @@ public class CommercialTimers
 
     private void CheckStreamStatus(int minutesBetweenChecks)
     {
-        if (this.lastOnlineCheck == null || this.lastOnlineCheck.Value.AddHours(minutesBetweenChecks) < DateTime.UtcNow)
+        if (this.lastOnlineCheck == null || this.lastOnlineCheck.Value.AddMinutes(minutesBetweenChecks) < DateTime.UtcNow)
         {
             var streamStart = this.bot.GetStreamStart();
             if (streamStart == null)
